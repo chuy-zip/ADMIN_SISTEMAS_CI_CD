@@ -37,3 +37,34 @@ def test_is_palindrome(s, esperado):
 
 
 
+@pytest.mark.parametrize("s, esperado", [
+    ("hola", "HOLA"),
+    ("", ""),
+    ("Hola Mundo 123", "HOLA MUNDO 123"),
+    ("canción", "CANCIÓN"),
+])
+def test_to_upper(s, esperado):
+    assert to_upper(s) == esperado
+
+
+@pytest.mark.parametrize("a, b, esperado", [
+    ("hola", "mundo", "holamundo"),
+    ("", "abc", "abc"),
+    ("abc", "", "abc"),
+    ("", "", ""),
+])
+def test_concat(a, b, esperado):
+    assert concat(a, b) == esperado
+
+
+@pytest.mark.parametrize("funcion", [reverse, count_vowels, is_palindrome, to_upper])
+@pytest.mark.parametrize("valor", [None, 123, ["a", "b"]])
+def test_entrada_invalida(funcion, valor):
+    with pytest.raises(TypeError):
+        funcion(valor)
+
+
+@pytest.mark.parametrize("a, b", [(1, 2), ("hola", None), (["a"], "b")])
+def test_concat_entrada_invalida(a, b):
+    with pytest.raises(TypeError):
+        concat(a, b)
