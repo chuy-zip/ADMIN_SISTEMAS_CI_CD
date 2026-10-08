@@ -11,3 +11,7 @@ def is_palindrome(s):
     return s == reverse(s)
 
 
+def to_upper(s):
+    return s.upper()
+
+
