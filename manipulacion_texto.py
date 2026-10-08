@@ -15,3 +15,5 @@ def to_upper(s):
     return s.upper()
 
 
+def concat(a, b):
+    return a + b
