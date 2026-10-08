@@ -26,3 +26,7 @@ python -m pytest -v
 
 El workflow `.github/workflows/ci.yml` corre las pruebas en cada Pull Request hacia `main`.
 La rama `main` está protegida: no se puede hacer merge mientras el check `test` no pase.
+
+### Evidencia de la protección de `main`
+
+![Regla de protección de la rama main](img/branch_protection_evidence.png)
