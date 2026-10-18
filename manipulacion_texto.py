@@ -11,7 +11,8 @@ def reverse(s):
 
 def count_vowels(s):
     _validar_texto(s)
-    return sum(c in "aeiouáéíóúü" for c in s.lower())
+    # return sum(c in "aeiouáéíóúü" for c in s.lower())
+    return sum(c in "aeiou" for c in s.lower())
 
 
 def is_palindrome(s):
